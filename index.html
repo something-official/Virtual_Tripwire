@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Virtual Tripwire is a safe learning simulation for region-of-interest motion detection. It demonstrates zones and event feedback without presenting itself as a real security monitor." />
+    <title>Virtual Tripwire</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="lab" aria-labelledby="title">
+      <header class="intro">
+        <p class="eyebrow">ROI / ALERT · local browser lab</p>
+        <h1 id="title">Virtual Tripwire</h1>
+        <p>A drawn motion zone that teaches ROI thresholds and local event logs.</p>
+        <div class="actions">
+          <button id="start-camera" type="button">Start camera</button>
+          <button id="use-sample" class="secondary" type="button">Use sample</button>
+          <button id="reset" class="secondary" type="button">Reset</button>
+          <button id="save" class="secondary" type="button">Save PNG</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Sample mode is ready. Camera permission has not been requested.</p>
+      </header>
+      <section class="workspace" aria-label="Interactive visual workspace">
+        <div class="input-panel panel"><span class="panel-label">Input signal</span><video id="video" autoplay muted playsinline aria-label="Optional camera input"></video><div id="sample" class="sample" aria-hidden="true"></div></div>
+        <div class="output-panel panel"><span class="panel-label">Processed study</span><canvas id="canvas" aria-label="Virtual Tripwire output" tabindex="0"></canvas></div>
+      </section>
+      <p id="metrics" class="metrics">Pointer/sample fallback · camera off</p>
+      <section class="notes" aria-label="Browser notes"><h2>Progressive by design</h2><p>Camera access is optional and requested only after an explicit action. This package uses a model-free signal baseline, never uploads frames, and keeps pointer/sample behavior available when permission or tracking is unavailable.</p></section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
